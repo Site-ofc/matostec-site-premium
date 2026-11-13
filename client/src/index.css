@@ -817,6 +817,17 @@ h1 em, h2 em, h3 em {
   mask-image: radial-gradient(ellipse at 50% 50%, #000 20%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 20%, transparent 75%);
 }
+
+/* Fundo liso na área de atendimento e avaliações, sem a malha quadriculada. */
+.region {
+  background: #0b1730;
+}
+.region-bg::before {
+  background: #0b1730;
+}
+.region-bg::after {
+  display: none;
+}
 .region-grid {
   position: relative;
   display: grid;
