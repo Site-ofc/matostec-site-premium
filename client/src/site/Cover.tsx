@@ -15,6 +15,7 @@ type CoverProps = {
 
 export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref, reviewsHref, phoneLabel }: CoverProps) {
   return (
+    <>
     <section className="cover" id="topo">
       <div className="cover-bg" aria-hidden="true">
         <div className="cover-grid" />
@@ -34,16 +35,6 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
             <span className="cover-eyebrow">{eyebrow}</span>
             <h1>{title}</h1>
             <p>{text}</p>
-            <div className="cover-actions">
-              <a className="btn btn-primary" href={whatsappHref} target="_blank" rel="noreferrer">
-                <MessageCircle size={17} />
-                <span>{primaryLabel}</span>
-                <ArrowUpRight size={15} />
-              </a>
-              <a className="btn btn-outline" href="#solucoes">
-                Explorar soluções <ArrowDownRight size={16} />
-              </a>
-            </div>
             <div className="cover-meta">
               <span>
                 <span className="status-dot" /> Atendimento pelo WhatsApp
@@ -74,5 +65,21 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
         </div>
       </div>
     </section>
+    <section className="cover-actions-band" aria-label="Próximos passos">
+      <div className="cover-actions-band-inner">
+        <span className="cover-actions-note">Atendimento local · orçamento sem compromisso</span>
+        <div className="cover-actions">
+          <a className="btn btn-primary" href={whatsappHref} target="_blank" rel="noreferrer">
+            <MessageCircle size={17} />
+            <span>{primaryLabel}</span>
+            <ArrowUpRight size={15} />
+          </a>
+          <a className="btn btn-outline" href="#solucoes">
+            Explorar soluções <ArrowDownRight size={16} />
+          </a>
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
