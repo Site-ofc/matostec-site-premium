@@ -327,7 +327,7 @@ function Hero({ model }: { model: ModelId }) {
   };
   const item = content[model];
   return (
-    <section className="hero" style={{ backgroundImage: `linear-gradient(90deg, var(--hero-overlay-start) 0%, var(--hero-overlay-mid) 50%, var(--hero-overlay-end) 100%), url(${item.image})` }}>
+    <section className="hero" id="topo" style={{ backgroundImage: `linear-gradient(90deg, var(--hero-overlay-start) 0%, var(--hero-overlay-mid) 50%, var(--hero-overlay-end) 100%), url(${item.image})` }}>
       <div className="hero-inner">
         <div className="hero-content">
           <span className="eyebrow">{item.eyebrow}</span>
@@ -435,7 +435,7 @@ function FAQSection() {
 }
 
 function SiteFooter({ model }: { model: ModelId }) {
-  return <footer className={`site-footer footer-${model}`}><div className="container-wide footer-top"><div><BrandMark inverse={model === 1} /><p>Segurança eletrônica, energia solar e automação em Goianésia, Anápolis e no Vale do São Patrício.</p></div><div className="footer-links"><div><span className="footer-label">Soluções</span><a href="#solucoes">Segurança eletrônica</a><a href="#solucoes">Energia solar</a><a href="#solucoes">Elétrica e automação</a></div><div><span className="footer-label">Contato</span><a href={whatsappHref} target="_blank" rel="noreferrer">Chamar no WhatsApp</a><a href={phoneHref}>Ligar {phone}</a><a href={reviewsHref} target="_blank" rel="noreferrer">Avaliações no Google</a></div></div></div><div className="container-wide footer-bottom"><span>© Matos Tec · projeto, instalação e manutenção.</span><a href="/">Ver as 3 propostas</a></div></footer>;
+  return <footer className={`site-footer footer-${model}`}><div className="container-wide footer-top"><div><BrandMark inverse={model === 1} /><p>Segurança eletrônica, energia solar e automação em Goianésia, Anápolis e no Vale do São Patrício.</p></div><div className="footer-links"><div><span className="footer-label">Soluções</span><a href="#solucoes">Segurança eletrônica</a><a href="#solucoes">Energia solar</a><a href="#solucoes">Elétrica e automação</a></div><div><span className="footer-label">Contato</span><a href={whatsappHref} target="_blank" rel="noreferrer">Chamar no WhatsApp</a><a href={phoneHref}>Ligar {phone}</a><a href={reviewsHref} target="_blank" rel="noreferrer">Avaliações no Google</a></div></div></div><div className="container-wide footer-bottom"><span>© Matos Tec · projeto, instalação e manutenção.</span><a href="#topo">Voltar ao topo</a></div></footer>;
 }
 
 function FullSite({ model }: { model: ModelId }) {
