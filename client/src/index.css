@@ -2054,7 +2054,7 @@ h1 em, h2 em, h3 em {
     display: none;
   }
   .cover.cover--residential .cover-actions--cover {
-    bottom: clamp(82px, 10vh, 124px);
+    bottom: clamp(104px, 13vh, 154px);
   }
 }
 
@@ -2062,20 +2062,20 @@ h1 em, h2 em, h3 em {
 .cover.cover--residential .cover-actions--cover .cover-link,
 .cover.cover--residential .cover-actions--cover .cover-link--primary,
 .cover.cover--residential .cover-actions--cover .cover-link--reviews {
-  color: #a9142b;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  color: #fff;
+  border-bottom: 1px solid #a9142b;
   text-decoration: none;
 }
 .cover.cover--residential .cover-actions--cover .cover-link:hover,
 .cover.cover--residential .cover-actions--cover .cover-link--primary:hover,
 .cover.cover--residential .cover-actions--cover .cover-link--reviews:hover {
-  color: #d52a43;
-  border-bottom-color: #fff;
+  color: #fff;
+  border-bottom-color: #d52a43;
 }
 
 @media (max-width: 640px) {
   .cover.cover--residential .cover-actions--cover {
-    bottom: clamp(82px, 11vh, 122px);
+    bottom: clamp(102px, 14vh, 148px);
   }
 }
 
