@@ -51,9 +51,9 @@ const modelLabels: Record<ModelId, string> = {
 
 const covers: Record<ModelId, { eyebrow: string; title: ReactNode; text: string; primaryLabel: string }> = {
   1: {
-    eyebrow: "Energia solar · Segurança eletrônica · Automação",
-    title: <>Mais segurança.<br /><em>Mais eficiência.</em></>,
-    text: "Energia solar, câmeras, elétrica e automação planejadas para funcionar em conjunto — do projeto à instalação.",
+    eyebrow: "Energia · Proteção · Automação",
+    title: <>Energia que<br /><em>trabalha</em> por você.</>,
+    text: "Energia solar, proteção e controle para sua rotina.",
     primaryLabel: "Falar com especialista",
   },
   2: {

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ArrowDownRight, ArrowUpRight, MessageCircle, Star } from "lucide-react";
+import { ChevronRight, Star } from "lucide-react";
 import Brand from "./Brand";
 import { asset } from "./paths";
 
@@ -64,12 +64,11 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
           <span className="cover-actions-note">Atendimento local · orçamento sem compromisso</span>
           <div className="cover-actions">
             <a className="btn btn-primary" href={whatsappHref} target="_blank" rel="noreferrer">
-              <MessageCircle size={17} />
               <span>{primaryLabel}</span>
-              <ArrowUpRight size={15} />
+              <ChevronRight size={20} />
             </a>
             <a className="btn btn-outline" href="#solucoes">
-              Explorar soluções <ArrowDownRight size={16} />
+              Explorar soluções <ChevronRight size={20} />
             </a>
           </div>
         </div>
