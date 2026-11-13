@@ -103,8 +103,8 @@ const services = [
     eyebrow: "03 · Elétrica e automação",
     title: "Uma casa que responde.",
     text: "Quadro, aterramento, proteção contra surto, luz, portão, tomadas, persianas e cenas no celular ou na voz — com a elétrica feita do jeito certo.",
-    image: "automation",
-    alt: "Mão acionando um interruptor inteligente com o celular ao lado",
+    image: "automation-service",
+    alt: "Técnico instalando um motor de portão automático e seu controle de automação",
     width: 1100,
     height: 1467,
   },
@@ -529,7 +529,7 @@ function Care() {
           </div>
         </div>
         <div className="care-media">
-          <StudioPhoto name="automation" alt="Automação de iluminação acionada pelo celular" sizes="(max-width: 1080px) 100vw, 560px" />
+          <StudioPhoto name="automation-maintenance" alt="Técnico inspecionando um painel fotovoltaico durante a manutenção" sizes="(max-width: 1080px) 100vw, 560px" />
         </div>
       </div>
     </section>
@@ -706,7 +706,7 @@ function Gallery() {
   const cards = [
     { id: 1 as ModelId, image: "security", title: "Nightline", text: "A direção aprovada: editorial escuro, foco em confiança e presença." },
     { id: 2 as ModelId, image: "solar", title: "Solar Aura", text: "A mesma base com foco na energia do sol e no acolhimento." },
-    { id: 3 as ModelId, image: "automation", title: "Grid Control", text: "A mesma base com foco técnico e conversão pelo diagnóstico." },
+    { id: 3 as ModelId, image: "automation-service", title: "Grid Control", text: "A mesma base com foco técnico e conversão pelo diagnóstico." },
   ];
   useEffect(() => {
     window.scrollTo(0, 0);

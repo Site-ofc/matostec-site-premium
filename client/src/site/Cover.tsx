@@ -59,13 +59,13 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
             <div className="cover-arc" aria-hidden="true" />
             <div className="cover-arc cover-arc--inner" aria-hidden="true" />
             <picture>
-              <source media="(max-width: 760px)" srcSet={asset("/assets/mascot/electrician-760.webp")} type="image/webp" />
+              <source media="(max-width: 760px)" srcSet={asset("/assets/mascot/electrician-cover-mobile.webp")} type="image/webp" />
               <img
                 className="cover-mascot"
-                src={asset("/assets/mascot/electrician.webp")}
-                alt="Técnico Matos Tec de uniforme, capacete e equipamento de medição"
-                width={1004}
-                height={1400}
+                src={asset("/assets/mascot/electrician-cover-wide.webp")}
+                alt="Mascote eletricista da Matos Tec instalando uma placa solar completa em estrutura metálica"
+                width={1800}
+                height={1072}
                 fetchPriority="high"
               />
             </picture>
