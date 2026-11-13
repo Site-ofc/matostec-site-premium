@@ -2054,7 +2054,28 @@ h1 em, h2 em, h3 em {
     display: none;
   }
   .cover.cover--residential .cover-actions--cover {
-    bottom: clamp(34px, 6vh, 62px);
+    bottom: clamp(82px, 10vh, 124px);
+  }
+}
+
+/* Links da capa mais altos, com vermelho-sangue e sublinhado branco discreto. */
+.cover.cover--residential .cover-actions--cover .cover-link,
+.cover.cover--residential .cover-actions--cover .cover-link--primary,
+.cover.cover--residential .cover-actions--cover .cover-link--reviews {
+  color: #a9142b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+.cover.cover--residential .cover-actions--cover .cover-link:hover,
+.cover.cover--residential .cover-actions--cover .cover-link--primary:hover,
+.cover.cover--residential .cover-actions--cover .cover-link--reviews:hover {
+  color: #d52a43;
+  border-bottom-color: #fff;
+}
+
+@media (max-width: 640px) {
+  .cover.cover--residential .cover-actions--cover {
+    bottom: clamp(82px, 11vh, 122px);
   }
 }
 
