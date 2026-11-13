@@ -1,14 +1,28 @@
-# Matos Tec — Três propostas de site
+# Matos Tec — Site premium
 
-React / Express / tRPC / Drizzle starter, adapted from the Sandbox web-db-user template.
+Homepage institucional premium para a Matos Tec, com identidade baseada no logotipo usado no perfil do Google Maps, fotos reais do perfil e paleta azul-marinho, vermelho, amarelo e branco.
 
-- `pnpm dev`: development server; honors `PORT` (default 3000).
-- `pnpm build` / `pnpm start`: build and serve `dist/index.js` and `dist/public/`.
-- `pnpm db:migrate`: apply checked-in migrations. `pnpm db:push`: generate and apply new schema changes.
-- `pnpm check` / `pnpm test`: types and application tests.
+## Conteúdo incluído
 
-Start with the Webdev skill's default-template guide. Platform login, storage, payments and service contracts live in its shared references; read the relevant capability before extending its helper.
+- Segurança eletrônica: câmeras, alarme, cerca, DVR/NVR, Wi-Fi/cabeada, casas, comércio, condomínio e fazenda.
+- Energia solar: painel, inversor, créditos, on-grid, híbrido e off-grid, Equatorial Goiás, ART, homologação e cuidados.
+- Elétrica e automação: quadro, DR, DPS, aterramento, fiação, portão, luz, tomadas, persianas, Alexa/Google, Wi-Fi, Zigbee e cabeada.
+- Processo de WhatsApp à entrega e manutenção pós-instalação.
+- Regiões atendidas, nota pública, avaliações e localização oficial no Google Maps.
+- CTAs funcionais para WhatsApp, telefone, avaliações e localização.
 
-`server/_core/publicConfig.ts` exposes only named public runtime values. Private keys stay server-side. The platform serves managed `/manus-storage/` assets; the application does not register a second proxy.
+## Rodar localmente
 
-Platform configuration is readable and editable through `webdev.config`. Default settings are initial values, not enforced constraints. The agent may modify the files, commands and configuration or follow the flexible guide for another stack.
+```bash
+pnpm install
+pnpm dev:static
+```
+
+O site abre em `http://localhost:3000`.
+
+## Links oficiais
+
+- Perfil e fotos no Google Maps: https://www.google.com/maps/place/Matos+Tec+Sistemas+de+Seguran%C3%A7a+e+Energia+Solar+em+Goian%C3%A9sia/
+- Avaliações: https://www.google.com/maps/search/?api=1&query=Matos%20Tec%20Sistemas%20de%20Seguran%C3%A7a%20e%20Energia%20Solar%20Goian%C3%A9sia
+- WhatsApp: https://wa.me/5562994932746
+- Telefone: +55 62 99493-2746
