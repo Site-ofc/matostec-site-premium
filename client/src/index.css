@@ -1230,6 +1230,17 @@ h1 em, h2 em, h3 em {
   .wa-bubble { width: 214px; }
 }
 
+@media (max-width: 900px) {
+  .wa-launcher {
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    gap: 0;
+  }
+  .wa-bubble,
+  .wa-mascot { display: none; }
+  .wa-button { margin-bottom: 0; }
+}
+
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

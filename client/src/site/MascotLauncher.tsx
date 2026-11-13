@@ -57,7 +57,7 @@ export default function MascotLauncher({ whatsappHref, phoneLabel }: LauncherPro
             <X size={14} />
           </button>
           <strong>Orçamento sem compromisso</strong>
-          <span>Chamo um técnico da Matos Tec no WhatsApp para avaliar o seu projeto.</span>
+          <span>Converse com a equipe da Matos Tec sobre o seu projeto.</span>
           <a href={whatsappHref} target="_blank" rel="noreferrer">
             Começar conversa
           </a>

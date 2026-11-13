@@ -26,6 +26,8 @@ const phone = "(62) 99493-2746";
 const phoneHref = "tel:+5562994932746";
 const whatsappHref =
   "https://wa.me/5562994932746?text=Ol%C3%A1%2C%20Matos%20Tec!%20Vim%20pelo%20site%20e%20queria%20um%20or%C3%A7amento.";
+const serviceWhatsappHref = (service: string) =>
+  `https://wa.me/5562994932746?text=${encodeURIComponent(`Olá, Matos Tec! Vim pelo site e quero conversar sobre ${service}.`)}`;
 const reviewsHref =
   "https://www.google.com/maps/search/?api=1&query=Matos%20Tec%20Sistemas%20de%20Seguran%C3%A7a%20e%20Energia%20Solar%20Goian%C3%A9sia";
 const mapsHref =
@@ -51,9 +53,9 @@ const modelLabels: Record<ModelId, string> = {
 
 const covers: Record<ModelId, { eyebrow: string; title: ReactNode; text: string; primaryLabel: string }> = {
   1: {
-    eyebrow: "Energia · Proteção · Automação",
-    title: <>Energia que<br /><em>trabalha</em> por você.</>,
-    text: "Energia solar, proteção e controle para sua rotina.",
+    eyebrow: "Segurança · Solar · Automação",
+    title: <>Seu imóvel,<br /><em>bem cuidado.</em></>,
+    text: "Segurança eletrônica, energia solar, elétrica e automação para casas, comércios e fazendas de Goianésia e região.",
     primaryLabel: "Falar com especialista",
   },
   2: {
@@ -84,7 +86,9 @@ const services = [
   {
     eyebrow: "01 · Segurança eletrônica",
     title: "Veja. Barre. Avise.",
-    text: "Câmeras no celular, alarme, cerca elétrica e controle de acesso. A proteção que funciona combina duas ou três camadas depois de olhar o muro, o portão e o movimento.",
+    text: "Câmeras com acesso pelo celular, alarme, cerca elétrica e controle de acesso. A combinação depende dos pontos vulneráveis e da rotina de quem circula pelo local.",
+    cta: "Falar sobre segurança",
+    chatTopic: "segurança eletrônica",
     image: "security",
     alt: "Câmera IP de segurança instalada em parede externa",
     width: 1100,
@@ -93,7 +97,9 @@ const services = [
   {
     eyebrow: "02 · Energia solar",
     title: "Gere no próprio telhado.",
-    text: "Projeto, instalação e homologação com a Equatorial Goiás. O sistema é dimensionado pela geração estimada em kWh por mês, não apenas pela quantidade de placas.",
+    text: "Projeto, instalação e homologação com a Equatorial Goiás. O dimensionamento considera a geração mensal estimada, o consumo e as condições do imóvel — não apenas a quantidade de placas.",
+    cta: "Falar sobre energia solar",
+    chatTopic: "energia solar",
     image: "solar",
     alt: "Detalhe de placa solar fotovoltaica com reflexo do sol",
     width: 1100,
@@ -102,7 +108,9 @@ const services = [
   {
     eyebrow: "03 · Elétrica e automação",
     title: "Uma casa que responde.",
-    text: "Quadro, aterramento, proteção contra surto, luz, portão, tomadas, persianas e cenas no celular ou na voz — com a elétrica feita do jeito certo.",
+    text: "Revisão do quadro, aterramento e proteção contra surtos antes de automatizar luzes, portão e tomadas pelo celular ou por comando de voz.",
+    cta: "Falar sobre elétrica e automação",
+    chatTopic: "elétrica e automação",
     image: "automation-service",
     alt: "Técnico instalando um motor de portão automático e seu controle de automação",
     width: 1100,
@@ -111,11 +119,11 @@ const services = [
 ];
 
 const benefits = [
-  "Um número só para chamar quando algo dá problema.",
-  "O quadro revisado pensando em tudo o que vai entrar nele.",
-  "Uma visita técnica para olhar o imóvel inteiro.",
-  "Cabos e eletrodutos planejados uma vez, sem abrir de novo.",
-  "Plano completo para instalar por etapas, no seu ritmo.",
+  "Um contato acompanha as instalações e recebe pedidos de suporte.",
+  "A capacidade do quadro é verificada antes da entrada de novos equipamentos.",
+  "Câmeras e cabos podem ser previstos antes do fechamento de paredes e forros.",
+  "As etapas são coordenadas para evitar intervenções e deslocamentos desnecessários.",
+  "O planejamento pode ser executado por etapas, conforme sua prioridade.",
 ];
 
 const sequence = [
@@ -130,7 +138,7 @@ const details = [
     accent: "blood",
     eyebrow: "Segurança eletrônica",
     title: "Proteção em camadas",
-    text: "Uma câmera registra, mas não impede. Cerca e concertina agem antes; alarme avisa durante; câmera mostra e grava depois e ao vivo.",
+    text: "Câmeras registram imagens; cercas e alarmes ajudam a proteger e avisar. A combinação é definida conforme acessos, pontos vulneráveis e circulação no local.",
     facts: [
       ["Wi-Fi", "1 a 3 pontos, cartão ou nuvem"],
       ["Cabeada", "DVR ou NVR com HD e nobreak"],
@@ -142,7 +150,7 @@ const details = [
     accent: "gold",
     eyebrow: "Energia solar",
     title: "Geração sem promessa vazia",
-    text: "Painel, inversor, casa e medidor trabalham juntos. O excedente vira crédito em kWh, válido por 60 meses na área da Equatorial Goiás.",
+    text: "O projeto considera consumo, telhado, inversor e conexão com a rede. A equipe cuida do dimensionamento e da homologação junto à Equatorial Goiás.",
     facts: [
       ["Geração", "Estimada em kWh/mês"],
       ["Créditos", "60 meses"],
@@ -154,7 +162,7 @@ const details = [
     accent: "navy",
     eyebrow: "Elétrica e automação",
     title: "Conforto sobre uma base certa",
-    text: "Antes de automatizar, olhe para disjuntor, aterramento, DR e DPS. Depois, luz, portão, tomadas, persianas e cenas respondem ao celular ou à voz.",
+    text: "A automação começa pela revisão do quadro, aterramento, DR e DPS. A escolha entre Wi-Fi, Zigbee ou cabeamento depende do imóvel e dos equipamentos.",
     facts: [
       ["Base", "Quadro, DR, DPS e aterramento"],
       ["Controle", "Wi-Fi, Zigbee ou cabeada"],
@@ -165,25 +173,27 @@ const details = [
 ];
 
 const process = [
-  ["01", "WhatsApp", "Conte o que você precisa. Se for solar, mande a foto da conta."],
-  ["02", "Visita técnica", "Telhado, quadro, padrão, muro e pontos de câmera entram no olhar."],
-  ["03", "Proposta por escrito", "Equipamento, marca, modelo, prazo e garantia de cada item."],
-  ["04", "Instalação e teste", "De dia e, para as câmeras, também com pouca luz."],
-  ["05", "Entrega", "Aplicativo configurado, explicação de uso e contato de suporte."],
+  ["01", "WhatsApp", "Explique o que precisa; para energia solar, envie uma foto recente da conta."],
+  ["02", "Visita técnica", "O técnico avalia telhado, quadro, padrão de entrada e os pontos relevantes para o serviço."],
+  ["03", "Proposta por escrito", "Você confere equipamentos, marcas, modelos, prazos e garantias antes de aprovar."],
+  ["04", "Instalação e testes", "Os sistemas são testados no local; as câmeras também são conferidas em baixa luminosidade."],
+  ["05", "Entrega e orientação", "O aplicativo é configurado e a equipe explica o uso e os canais de suporte."],
 ];
 
 const care = [
-  ["Segurança", "Limpar a lente, conferir uma gravação antiga e trocar acessos quando necessário. Baterias têm vida útil."],
-  ["Energia solar", "Acompanhar o app e limpar os painéis quando a poeira acumular, especialmente na seca de maio a setembro."],
-  ["Elétrica e automação", "Testar o DR de tempos em tempos e manter aplicativo e central atualizados."],
+  ["Segurança", "Mantenha as lentes limpas e confira as gravações periodicamente. Revise os acessos quando alguém deixar de usar o sistema e acompanhe as baterias."],
+  ["Energia solar", "Acompanhe a geração pelo aplicativo e observe o acúmulo de poeira nos painéis, comum na estação seca. Siga as orientações de limpeza e segurança."],
+  ["Elétrica e automação", "Teste o DR conforme a orientação do fabricante e mantenha aplicativos e centrais atualizados."],
 ];
 
 const faqs = [
-  ["Como é o preço?", "Depende do tamanho do imóvel, do equipamento e de quanto cabo precisa passar. O valor exato sai na proposta, depois da visita."],
-  ["Vocês atendem fora de Goianésia?", "Sim. Anápolis, Ceres, Rialma, Jaraguá, Itapuranga, Uruana, Rubiataba, Barro Alto e toda a região do Vale do São Patrício."],
-  ["Dá para fazer por etapas?", "Sim. A visita deixa o plano completo e você instala na ordem e no ritmo que couber."],
-  ["Atendem comércio, condomínio e fazenda?", "Na segurança, sim: casa, comércio, condomínio e fazenda. Para solar e automação, a solução é dimensionada ao imóvel."],
-  ["A energia solar zera a conta?", "Não há promessa de conta zero. Permanecem taxa mínima, iluminação pública e regras do Fio B conforme o sistema e o ano. A proposta mostra a geração estimada."],
+  ["Como é calculado o orçamento?", "O valor varia conforme o serviço, o tamanho do imóvel, os equipamentos e a instalação existente. Depois da avaliação, você recebe uma proposta por escrito antes da obra."],
+  ["Como funciona a visita técnica?", "Você explica pelo WhatsApp o que precisa e combina a visita. O técnico avalia os pontos relevantes para o serviço, como telhado, quadro, padrão de entrada, muro e locais das câmeras. Depois, envia a proposta por escrito."],
+  ["A proposta informa prazos e garantias?", "Sim. A proposta descreve equipamentos, marcas, modelos, prazos e garantias de cada item antes da instalação. Os períodos e condições ficam especificados no documento."],
+  ["Vocês atendem fora de Goianésia?", "Sim. Atendemos Anápolis, Ceres, Rialma, Jaraguá, Itapuranga, Uruana, Rubiataba, Barro Alto e cidades da região do Vale do São Patrício. Consulte a equipe para confirmar seu endereço."],
+  ["Dá para contratar por etapas?", "Sim. Você pode priorizar o que precisa resolver agora e executar o restante depois, seguindo a orientação técnica para o imóvel."],
+  ["Atendem casas, comércios, condomínios e fazendas?", "A área de segurança atende esses tipos de imóvel. Para energia solar, elétrica e automação, a equipe confirma a solução adequada conforme o local e o projeto."],
+  ["A energia solar zera a conta?", "Não é possível prometer conta zerada. Podem permanecer cobranças mínimas, iluminação pública e outros componentes previstos nas regras aplicáveis. A proposta apresenta uma estimativa de geração para o seu caso."],
 ];
 
 function getModelFromPath(): ModelId | null {
@@ -269,23 +279,23 @@ function Solutions() {
         <div className="solutions-top">
           <div className="section-head">
             <span className="kicker">01 — Soluções</span>
-            <h2>Quatro camadas de um <em>mesmo sistema.</em></h2>
-            <p>Antes da câmera, do painel ou do comando de voz, existe uma base elétrica bem feita. É isso que torna o conjunto mais seguro e mais fácil de manter.</p>
+            <h2>Uma base elétrica. <em>Três frentes para o imóvel.</em></h2>
+            <p>Segurança, geração solar e automação dependem de uma infraestrutura bem planejada. Você pode contratar as áreas juntas ou começar pela necessidade mais urgente.</p>
           </div>
-          <p className="solutions-note">Segurança, energia solar, elétrica e automação na mesma visita técnica — com um plano que conversa entre si.</p>
+          <p className="solutions-note">A avaliação considera o que já existe no imóvel antes de indicar equipamentos, pontos e etapas.</p>
         </div>
         <div className="solutions-grid">
           {services.map((service) => (
             <article className="solution" key={service.title}>
-              <a className="solution-media" href={whatsappHref} target="_blank" rel="noreferrer" aria-label={`Falar sobre ${service.title}`}>
+              <a className="solution-media" href={serviceWhatsappHref(service.chatTopic)} target="_blank" rel="noreferrer" aria-label={service.cta}>
                 <StudioPhoto name={service.image} alt={service.alt} />
               </a>
               <div className="solution-body">
                 <span className="solution-index">{service.eyebrow}</span>
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
-                <a className="link-arrow" href={whatsappHref} target="_blank" rel="noreferrer">
-                  Conhecer a área <ArrowRight size={15} />
+                <a className="link-arrow" href={serviceWhatsappHref(service.chatTopic)} target="_blank" rel="noreferrer">
+                  {service.cta} <ArrowRight size={15} />
                 </a>
               </div>
             </article>
@@ -316,8 +326,8 @@ function SolarSpot() {
         <div className="solar-copy">
           <div className="section-head">
             <span className="kicker kicker--gold">02 — Energia solar</span>
-            <h2>O sol entra pelo telhado e volta como <em>crédito em kWh.</em></h2>
-            <p>O painel gera, o inversor converte e a casa usa na hora. O excedente vai para a rede da Equatorial Goiás e pode abater outra conta no mesmo CPF ou CNPJ.</p>
+            <h2>Gere energia no telhado e aproveite <em>cada kWh.</em></h2>
+            <p>A energia gerada é usada primeiro no imóvel. O excedente pode ser enviado à rede da Equatorial Goiás e compensar consumo, conforme as regras aplicáveis ao sistema.</p>
           </div>
           <dl className="metrics">
             <div className="metric">
@@ -333,8 +343,8 @@ function SolarSpot() {
               <dd>Equatorial <em>Goiás</em></dd>
             </div>
           </dl>
-          <a className="link-arrow" href={whatsappHref} target="_blank" rel="noreferrer">
-            Enviar minha conta de luz <ArrowUpRight size={15} />
+          <a className="link-arrow" href={serviceWhatsappHref("energia solar")} target="_blank" rel="noreferrer">
+            Enviar conta para dimensionamento <ArrowUpRight size={15} />
           </a>
         </div>
       </div>
@@ -351,7 +361,7 @@ function Diagnostic() {
         <div className="section-head">
           <span className="kicker">03 — Diagnóstico</span>
           <h2>Não sabe o que pedir? <em>Comece por aqui.</em></h2>
-          <p>Escolha a situação que mais parece com a sua. A recomendação já aponta o primeiro movimento.</p>
+          <p>Marque a situação mais parecida com a sua. A indicação sugere por onde começar; a equipe confirma a solução após avaliar o imóvel.</p>
         </div>
         <div className="diag">
           <div className="diag-list" role="tablist" aria-label="Situações do imóvel">
@@ -372,7 +382,7 @@ function Diagnostic() {
             <span className="kicker">Próximo passo recomendado</span>
             <h3>{current.answer}</h3>
             <p>{current.detail}</p>
-            <a className="btn btn-gold" href={whatsappHref} target="_blank" rel="noreferrer">
+            <a className="btn btn-gold" href={serviceWhatsappHref(current.answer)} target="_blank" rel="noreferrer">
               Contar meu caso <ArrowUpRight size={15} />
             </a>
             <span className="diag-count">Diagnóstico inicial pelo WhatsApp · {String(active + 1).padStart(2, "0")}/07</span>
@@ -394,8 +404,8 @@ function Integration() {
         <div>
           <div className="section-head">
             <span className="kicker">04 — Uma empresa em vez de três</span>
-            <h2>Menos retrabalho. <em>Mais visão do todo.</em></h2>
-            <p>Quem instala a câmera é a mesma empresa que faz a parte elétrica e coloca o sistema solar. Veja o que muda na prática.</p>
+            <h2>Uma equipe coordenada. <em>Menos retrabalho.</em></h2>
+            <p>Quando os serviços são planejados em conjunto, quadro, passagens de cabo e sequência de instalação podem ser avaliados desde o início.</p>
           </div>
           <div className="benefit-list">
             {benefits.map((benefit, index) => (
@@ -406,7 +416,7 @@ function Integration() {
             ))}
           </div>
           <a className="link-arrow" href={whatsappHref} target="_blank" rel="noreferrer">
-            Quero mais de uma área na mesma visita <ArrowRight size={15} />
+            Planejar mais de uma área <ArrowRight size={15} />
           </a>
         </div>
       </div>
@@ -421,7 +431,7 @@ function Sequence() {
         <div className="section-head">
           <span className="kicker kicker--gold">05 — A ordem certa</span>
           <h2>Quando você faz mais de uma coisa, <em>o projeto conversa.</em></h2>
-          <p>Uma base bem resolvida evita que o próximo sistema vire um improviso.</p>
+          <p>Se o projeto incluir mais de uma área, esta sequência ajuda a organizar as etapas e reduzir ajustes depois da obra.</p>
         </div>
         <div className="sequence-grid">
           {sequence.map((step) => (
@@ -433,7 +443,7 @@ function Sequence() {
           ))}
         </div>
         <div className="sequence-note">
-          <ArrowRight size={15} /> O plano pode ser instalado por etapas. A visita deixa o caminho pronto.
+          <ArrowRight size={15} /> A ordem final depende do imóvel; a equipe explica as prioridades na proposta.
         </div>
       </div>
     </section>
@@ -483,8 +493,8 @@ function Process() {
         <div>
           <div className="section-head">
             <span className="kicker">07 — Do primeiro áudio ao sistema funcionando</span>
-            <h2>A clareza começa <em>antes da obra.</em></h2>
-            <p>Você sabe o que será visto, proposto, instalado e entregue.</p>
+            <h2>Saiba o que esperar <em>em cada etapa.</em></h2>
+            <p>Da avaliação inicial à entrega, você recebe as informações necessárias antes de aprovar o serviço.</p>
           </div>
           <a className="btn btn-dark process-cta" href={whatsappHref} target="_blank" rel="noreferrer">
             <MessageCircle size={16} /> Começar pelo WhatsApp <ArrowUpRight size={15} />
@@ -543,8 +553,8 @@ function Region() {
       <div className="wrap region-grid">
         <div>
           <span className="kicker kicker--gold">09 — Localização e atendimento</span>
-          <h2>Goianésia, Anápolis e o <em>Vale do São Patrício.</em></h2>
-          <p>Atendimento para casas, comércios, condomínios e fazendas, com uma equipe que entende o imóvel inteiro.</p>
+          <h2>Atendimento em <em>Goianésia e região.</em></h2>
+          <p>Confira abaixo as cidades atendidas. Para confirmar disponibilidade no seu endereço, fale com a equipe pelo WhatsApp.</p>
           <div className="region-actions">
             <a className="btn btn-gold" href={whatsappHref} target="_blank" rel="noreferrer">
               <MessageCircle size={16} /> Ver se atendemos você
@@ -617,11 +627,11 @@ function FinalCta() {
     <section className="cta">
       <div className="wrap cta-inner">
         <div>
-          <span className="kicker">Qual área vem primeiro?</span>
-          <h2>Vamos deixar seu próximo passo <em>claro.</em></h2>
+          <span className="kicker">Segurança · energia solar · elétrica e automação</span>
+          <h2>Escolha por onde começar. <em>A equipe orienta o próximo passo.</em></h2>
         </div>
         <div className="cta-side">
-          <p>Conte pelo WhatsApp o que precisa resolver. A visita técnica organiza o resto.</p>
+          <p>Conte o que precisa resolver e onde fica o imóvel. A equipe orienta você sobre a avaliação e a proposta.</p>
           <a className="btn" href={whatsappHref} target="_blank" rel="noreferrer">
             <MessageCircle size={16} /> Começar pelo WhatsApp <ArrowUpRight size={15} />
           </a>
@@ -638,7 +648,7 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <Brand tone="light" size="lg" asLink={false} />
-            <p>Segurança eletrônica, energia solar e automação em Goianésia, Anápolis e no Vale do São Patrício.</p>
+            <p>Segurança eletrônica, energia solar, elétrica e automação em Goianésia e cidades da região.</p>
           </div>
           <div className="footer-links">
             <div className="footer-col">
