@@ -45,12 +45,6 @@ const regions = [
   "Barro Alto",
 ];
 
-const modelLabels: Record<ModelId, string> = {
-  1: "Nightline",
-  2: "Solar Aura",
-  3: "Grid Control",
-};
-
 const covers: Record<ModelId, { eyebrow: string; title: ReactNode; text: string; primaryLabel: string }> = {
   1: {
     eyebrow: "Segurança · Solar · Automação",
@@ -656,7 +650,7 @@ function Footer() {
               <a href="#solucoes">Segurança eletrônica</a>
               <a href="#solucoes">Energia solar</a>
               <a href="#solucoes">Elétrica e automação</a>
-              <a href={link("/propostas")}>Ver as 3 propostas</a>
+              <a href={link("/propostas")}>Conhecer nossas soluções</a>
             </div>
             <div className="footer-col">
               <span>Contato</span>
@@ -714,9 +708,9 @@ function FullSite({ model }: { model: ModelId }) {
 
 function Gallery() {
   const cards = [
-    { id: 1 as ModelId, image: "security", title: "Nightline", text: "A direção aprovada: editorial escuro, foco em confiança e presença." },
-    { id: 2 as ModelId, image: "solar", title: "Solar Aura", text: "A mesma base com foco na energia do sol e no acolhimento." },
-    { id: 3 as ModelId, image: "automation-service", title: "Grid Control", text: "A mesma base com foco técnico e conversão pelo diagnóstico." },
+    { id: 1 as ModelId, image: "security", title: "Segurança eletrônica", text: "Câmeras, alarmes, cercas elétricas e controle de acesso para proteger o que importa." },
+    { id: 2 as ModelId, image: "solar", title: "Energia solar", text: "Projeto, instalação e homologação para gerar sua própria energia com planejamento." },
+    { id: 3 as ModelId, image: "automation-service", title: "Elétrica e automação", text: "Quadro, aterramento, proteção e comandos inteligentes para uma rotina mais prática." },
   ];
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -729,18 +723,18 @@ function Gallery() {
       </header>
       <section className="gallery-hero">
         <div>
-          <span className="kicker">Matos Tec · direções de redesign</span>
-          <h1>Três formas de transformar a mesma força em um site mais <em>memorável.</em></h1>
-          <p>Mockups completos, responsivos e baseados nas informações públicas da Matos Tec: segurança, energia solar, elétrica e automação em Goianésia, Anápolis e no Vale do São Patrício.</p>
+          <span className="kicker">Matos Tec · nossas soluções</span>
+          <h1>Proteção, economia e praticidade para o seu <em>imóvel.</em></h1>
+          <p>Cuidamos da segurança eletrônica, energia solar, elétrica e automação de casas, comércios, condomínios e fazendas em Goianésia, Anápolis e no Vale do São Patrício.</p>
         </div>
         <div className="gallery-proof"><strong>5,0</strong> no Google · 6 avaliações</div>
       </section>
       <section className="gallery-grid">
         {cards.map((card) => (
           <a className="gallery-card" key={card.id} href={link(`/modelo-${card.id}`)}>
-            <StudioPhoto name={card.image} alt={`Modelo ${card.title}`} sizes="(max-width: 900px) 100vw, 30vw" />
+            <StudioPhoto name={card.image} alt={card.title} sizes="(max-width: 900px) 100vw, 30vw" />
             <div className="gallery-card-body">
-              <span>Modelo 0{card.id}</span>
+              <span>Solução 0{card.id}</span>
               <h2>{card.title}</h2>
               <p>{card.text}</p>
             </div>
@@ -748,7 +742,7 @@ function Gallery() {
         ))}
       </section>
       <footer className="gallery-foot">
-        <span>Segurança eletrônica · energia solar · automação</span>
+        <span>Segurança eletrônica · energia solar · elétrica e automação</span>
         <a href={phoneHref}>{phone}</a>
       </footer>
     </main>

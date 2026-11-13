@@ -10,10 +10,10 @@ import { BASE } from "./site/paths";
 
 const titles: Record<string, string> = {
   "/": "Matos Tec — Segurança, energia solar e automação",
-  "/propostas": "Matos Tec — Propostas de site",
-  "/modelo-1": "Matos Tec — Nightline",
-  "/modelo-2": "Matos Tec — Solar Aura",
-  "/modelo-3": "Matos Tec — Grid Control",
+  "/propostas": "Matos Tec — Nossas soluções",
+  "/modelo-1": "Matos Tec — Segurança eletrônica",
+  "/modelo-2": "Matos Tec — Energia solar",
+  "/modelo-3": "Matos Tec — Elétrica e automação",
 };
 
 function TitleSync() {
