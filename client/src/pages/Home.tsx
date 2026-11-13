@@ -55,7 +55,7 @@ const covers: Record<ModelId, { eyebrow: string; title: ReactNode; text: string;
   1: {
     eyebrow: "Segurança · Solar · Automação",
     title: <>Seu imóvel,<br /><em>bem cuidado.</em></>,
-    text: "Segurança eletrônica, energia solar, elétrica e automação para casas, comércios e fazendas de Goianésia e região.",
+    text: "Três frentes para o seu imóvel: segurança eletrônica, energia solar e elétrica com automação — para casas, comércios e fazendas de Goianésia e região.",
     primaryLabel: "Falar com especialista",
   },
   2: {
@@ -280,7 +280,7 @@ function Solutions() {
           <div className="section-head">
             <span className="kicker">01 — Soluções</span>
             <h2>Uma base elétrica. <em>Três frentes para o imóvel.</em></h2>
-            <p>Segurança, geração solar e automação dependem de uma infraestrutura bem planejada. Você pode contratar as áreas juntas ou começar pela necessidade mais urgente.</p>
+            <p>As três áreas podem ser contratadas juntas ou por etapas, começando pela necessidade mais urgente.</p>
           </div>
           <p className="solutions-note">A avaliação considera o que já existe no imóvel antes de indicar equipamentos, pontos e etapas.</p>
         </div>
@@ -405,7 +405,7 @@ function Integration() {
           <div className="section-head">
             <span className="kicker">04 — Uma empresa em vez de três</span>
             <h2>Uma equipe coordenada. <em>Menos retrabalho.</em></h2>
-            <p>Quando os serviços são planejados em conjunto, quadro, passagens de cabo e sequência de instalação podem ser avaliados desde o início.</p>
+            <p>Planejar os serviços juntos ajuda a organizar quadro, cabos e etapas desde o início.</p>
           </div>
           <div className="benefit-list">
             {benefits.map((benefit, index) => (
@@ -431,7 +431,7 @@ function Sequence() {
         <div className="section-head">
           <span className="kicker kicker--gold">05 — A ordem certa</span>
           <h2>Quando você faz mais de uma coisa, <em>o projeto conversa.</em></h2>
-          <p>Se o projeto incluir mais de uma área, esta sequência ajuda a organizar as etapas e reduzir ajustes depois da obra.</p>
+          <p>Esta sequência organiza as etapas e reduz ajustes depois da obra.</p>
         </div>
         <div className="sequence-grid">
           {sequence.map((step) => (
@@ -457,7 +457,7 @@ function Details() {
         <div className="section-head">
           <span className="kicker">06 — Detalhe que vira confiança</span>
           <h2>A proposta explica o que acontece <em>antes, durante e depois.</em></h2>
-          <p>A Matos Tec não começa pelo equipamento. Começa pelo contexto do imóvel.</p>
+          <p>A proposta mostra o que será feito e por quê, conforme o contexto do imóvel.</p>
         </div>
         <div className="details-grid">
           {details.map((detail) => (
@@ -494,7 +494,7 @@ function Process() {
           <div className="section-head">
             <span className="kicker">07 — Do primeiro áudio ao sistema funcionando</span>
             <h2>Saiba o que esperar <em>em cada etapa.</em></h2>
-            <p>Da avaliação inicial à entrega, você recebe as informações necessárias antes de aprovar o serviço.</p>
+            <p>Você acompanha cada etapa e recebe as informações necessárias antes de aprovar o serviço.</p>
           </div>
           <a className="btn btn-dark process-cta" href={whatsappHref} target="_blank" rel="noreferrer">
             <MessageCircle size={16} /> Começar pelo WhatsApp <ArrowUpRight size={15} />
