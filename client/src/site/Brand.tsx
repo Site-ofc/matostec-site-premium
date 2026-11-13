@@ -9,7 +9,7 @@ type BrandProps = {
 export default function Brand({ tone = "light", size = "md", asLink = true }: BrandProps) {
   const content = (
     <>
-      <img src={asset("/assets/matos-tec-mark.png")} width={354} height={209} alt="" aria-hidden="true" />
+      <img src={asset("/assets/matos-tec-mark-hq.png")} width={1632} height={964} alt="" aria-hidden="true" />
       <span className="brand-type">
         <b>Matos Tec</b>
         <i>Segurança eletrônica</i>

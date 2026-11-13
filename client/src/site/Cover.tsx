@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ChevronRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Brand from "./Brand";
 import { asset } from "./paths";
 
@@ -58,12 +58,11 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
           </div>
         </div>
         <div className="cover-actions cover-actions--cover" role="group" aria-label="Próximos passos">
-          <a className="btn btn-primary" href={whatsappHref} target="_blank" rel="noreferrer">
-            <span>{primaryLabel}</span>
-            <ChevronRight size={20} />
+          <a className="cover-link cover-link--primary" href={whatsappHref} target="_blank" rel="noreferrer">
+            {primaryLabel}
           </a>
-          <a className="btn btn-outline" href={reviewsHref} target="_blank" rel="noreferrer">
-            <Star size={18} fill="currentColor" /> Ver avaliações no Google
+          <a className="cover-link cover-link--reviews" href={reviewsHref} target="_blank" rel="noreferrer">
+            Ver avaliações no Google
           </a>
         </div>
       </section>
