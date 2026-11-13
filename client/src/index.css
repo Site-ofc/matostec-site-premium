@@ -1786,7 +1786,7 @@ h1 em, h2 em, h3 em {
 }
 .cover.cover--residential .cover-copy {
   max-width: 840px;
-  transform: translateY(1.5vh);
+  transform: translateY(-20%);
 }
 .cover.cover--residential .cover-copy h1 {
   max-width: 840px;
@@ -1844,7 +1844,7 @@ h1 em, h2 em, h3 em {
   .cover.cover--residential .cover-brand .brand-type b { font-size: 34px; }
   .cover.cover--residential .cover-brand .brand-type i { font-size: 7px; }
   .cover.cover--residential .cover-body { padding: 26px 0 96px; }
-  .cover.cover--residential .cover-copy { transform: translateY(0); }
+  .cover.cover--residential .cover-copy { transform: translateY(-20%); }
   .cover.cover--residential .cover-copy h1 {
     max-width: 350px;
     margin: 22px auto 15px;
