@@ -10,3 +10,26 @@
 @media (max-width: 520px){.container-wide,.nav-inner,.hero-inner{width:calc(100% - 30px)}.button{font-size:12px;padding:12px 13px}.hero{min-height:680px}.hero-inner{min-height:680px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.hero-meta{display:block;line-height:2}.hero-meta a{margin-top:5px}.service-strip,.problem-section,.integration-section,.details-section,.process-section,.after-section,.faq-section{padding:86px 0}.section-heading h2{font-size:39px}.service-intro h2{font-size:41px}.problem-list button{grid-template-columns:25px 1fr 15px;padding:16px 12px;font-size:11px}.problem-answer{padding:22px 18px}.sequence-grid{gap:8px}.sequence-grid article{padding:15px;min-height:220px}.sequence-grid h3{font-size:18px}.sequence-grid p{font-size:11px}.detail-panel{padding:20px;min-height:auto}.process-grid{gap:38px}.after-image img{height:310px}.region-content h2{font-size:48px}.region-list{padding:20px}.gallery-page{padding:16px 18px}.gallery-kicker{display:none}.gallery-contact{font-size:11px}.gallery-footer{font-size:10px}}
 .nav-review{display:inline-flex;align-items:center;gap:5px;color:#f0df67;font-size:11px;font-weight:700}.nav-review:hover{color:#fff}.region-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.button-map{border-color:rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.08)}.button-map:hover{background:rgba(255,255,255,.16)}.region-links{display:grid;gap:11px;margin-top:18px}.review-link{display:flex;align-items:center;gap:7px;color:var(--accent);font-size:11px;font-weight:700}.region-list .review-link{color:#f0df67}.site-footer .brand-logo-image{width:142px;height:47px}.site-footer .footer-links .footer-label{color:#f0df67}.site-footer .footer-bottom a{color:#f0df67}
 @media (max-width:900px){.nav-review{display:none}.region-actions{align-items:stretch;flex-direction:column}.region-actions .button{width:100%}}
+
+
+/* Contrast corrections for the approved Nightline mockup. */
+.model-1 .problem-list button.active{background:#3b4667;color:#fff}
+.model-1 .problem-list button:hover{background:#313852;color:#fff}
+.model-1 .problem-answer{background:#fff;color:#242a43}
+.model-1 .problem-answer p{color:#626a7d}
+.model-1 .problem-answer .answer-icon{background:rgba(36,42,67,.08)}
+.model-1 .problem-answer .answer-footer{color:#6f7585;border-color:rgba(36,42,67,.14)}
+.model-1 .sequence-section{background:#fff;color:#242a43;--ink:#242a43;--muted:#667085;--line:rgba(36,42,67,.15)}
+.model-1 .sequence-grid article{border-color:rgba(36,42,67,.15);background:#f8f9fb}
+.model-1 .sequence-grid article>svg{color:var(--accent)}
+.model-1 .sequence-grid p{color:#667085}
+.model-1 .sequence-number{color:#858b9a}
+.model-1 .site-footer{background:#fff;color:#242a43}
+.model-1 .site-footer .brand-mark{color:#242a43}
+.model-1 .site-footer p,.model-1 .site-footer .footer-links a{color:#626a7d}
+.model-1 .site-footer .footer-links a:hover{color:#242a43}
+.model-1 .site-footer .footer-links .footer-label{color:#b84546}
+.model-1 .site-footer .footer-bottom{border-color:rgba(36,42,67,.14);color:#77808f}
+.model-1 .site-footer .footer-bottom a{color:#b84546}
+:focus-visible{outline:3px solid #f0df67;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
