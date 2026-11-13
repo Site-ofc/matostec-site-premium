@@ -62,8 +62,8 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
             <span>{primaryLabel}</span>
             <ChevronRight size={20} />
           </a>
-          <a className="btn btn-outline" href="#solucoes">
-            Explorar soluções <ChevronRight size={20} />
+          <a className="btn btn-outline" href={reviewsHref} target="_blank" rel="noreferrer">
+            <Star size={18} fill="currentColor" /> Ver avaliações no Google
           </a>
         </div>
       </section>
