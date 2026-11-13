@@ -599,10 +599,7 @@ h1 em, h2 em, h3 em {
   position: sticky;
   min-width: 0;
   top: 96px;
-  background:
-    radial-gradient(340px 340px at 106% -6%, rgba(242, 193, 78, 0.17), transparent 68%),
-    radial-gradient(280px 280px at -10% 108%, rgba(179, 18, 38, 0.28), transparent 70%),
-    var(--navy-900);
+  background: var(--navy-900);
   color: #fff;
   border-radius: var(--radius);
   padding: 34px 32px 28px;
