@@ -1626,3 +1626,70 @@ h1 em, h2 em, h3 em {
   .cover-actions-band .cover-actions { gap: 7px; }
   .cover-actions-band .btn { font-size: 12px; }
 }
+
+
+/* CTA elegante integrado à capa, imediatamente abaixo da descrição */
+.cover.cover--residential .cover-actions--cover {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 790px);
+  margin: 30px auto 0;
+}
+.cover.cover--residential .cover-actions--cover .btn {
+  width: 100%;
+  min-width: 0;
+  min-height: 74px;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 22px;
+  border-radius: 15px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0;
+  backdrop-filter: blur(10px);
+}
+.cover.cover--residential .cover-actions--cover .btn-primary {
+  border: 1px solid rgba(255, 112, 124, 0.9);
+  background: linear-gradient(135deg, #c3182e, #9f1023);
+  box-shadow: 0 8px 28px -10px rgba(204, 28, 52, 0.78), inset 0 1px rgba(255, 255, 255, 0.18);
+}
+.cover.cover--residential .cover-actions--cover .btn-primary:hover {
+  background: linear-gradient(135deg, #d32139, #a90e25);
+  box-shadow: 0 12px 34px -10px rgba(204, 28, 52, 0.85), inset 0 1px rgba(255, 255, 255, 0.22);
+}
+.cover.cover--residential .cover-actions--cover .btn-outline {
+  border: 1.5px solid var(--gold-soft);
+  background: rgba(10, 14, 28, 0.68);
+  color: var(--gold-soft);
+  box-shadow: 0 8px 24px -14px rgba(0, 0, 0, 0.9), inset 0 1px rgba(255, 255, 255, 0.08);
+}
+.cover.cover--residential .cover-actions--cover .btn-outline:hover {
+  background: rgba(31, 39, 68, 0.9);
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.8);
+}
+.cover.cover--residential .cover-actions--cover .btn svg { flex: none; }
+
+@media (max-width: 640px) {
+  .cover.cover--residential .cover-actions--cover {
+    gap: 8px;
+    width: 100%;
+    margin-top: 22px;
+  }
+  .cover.cover--residential .cover-actions--cover .btn {
+    min-height: 62px;
+    gap: 4px;
+    padding: 12px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.18;
+    white-space: normal;
+  }
+  .cover.cover--residential .cover-actions--cover .btn svg { width: 16px; height: 16px; }
+  .cover-photo img { object-position: left center; }
+}
+
+@media (max-width: 360px) {
+  .cover.cover--residential .cover-actions--cover { gap: 6px; }
+  .cover.cover--residential .cover-actions--cover .btn { font-size: 12px; }
+}

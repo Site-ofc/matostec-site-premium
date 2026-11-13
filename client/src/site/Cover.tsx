@@ -45,6 +45,15 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
               <span className="cover-eyebrow">{eyebrow}</span>
               <h1>{title}</h1>
               <p>{text}</p>
+              <div className="cover-actions cover-actions--cover">
+                <a className="btn btn-primary" href={whatsappHref} target="_blank" rel="noreferrer">
+                  <span>{primaryLabel}</span>
+                  <ChevronRight size={20} />
+                </a>
+                <a className="btn btn-outline" href="#solucoes">
+                  Explorar soluções <ChevronRight size={20} />
+                </a>
+              </div>
               <div className="cover-meta">
                 <span>
                   <span className="status-dot" /> Atendimento pelo WhatsApp
@@ -55,21 +64,6 @@ export default function Cover({ eyebrow, title, text, primaryLabel, whatsappHref
                 <a href={`tel:+${phoneLabel.replace(/\D/g, "")}`}>{phoneLabel}</a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="cover-actions-band" aria-label="Próximos passos">
-        <div className="cover-actions-band-inner">
-          <span className="cover-actions-note">Atendimento local · orçamento sem compromisso</span>
-          <div className="cover-actions">
-            <a className="btn btn-primary" href={whatsappHref} target="_blank" rel="noreferrer">
-              <span>{primaryLabel}</span>
-              <ChevronRight size={20} />
-            </a>
-            <a className="btn btn-outline" href="#solucoes">
-              Explorar soluções <ChevronRight size={20} />
-            </a>
           </div>
         </div>
       </section>
