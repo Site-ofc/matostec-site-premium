@@ -29,7 +29,7 @@ const whatsappHref =
 const serviceWhatsappHref = (service: string) =>
   `https://wa.me/5562994932746?text=${encodeURIComponent(`Olá, Matos Tec! Vim pelo site e quero conversar sobre ${service}.`)}`;
 const reviewsHref =
-  "https://www.google.com/maps/search/?api=1&query=Matos%20Tec%20Sistemas%20de%20Seguran%C3%A7a%20e%20Energia%20Solar%20Goian%C3%A9sia";
+  "https://www.google.com/maps/place/Matos+Tec+Sistemas+de+Seguran%C3%A7a+e+Energia+Solar+em+Goian%C3%A9sia/@-15.4455263,-49.116242,8z/data=!4m9!1m2!2m1!1sMatos+Tec+Sistemas+de+Seguran%C3%A7a+e+Energia+Solar+Goian%C3%A9sia!3m5!1s0x6cce93ab2bdffb0b:0x4b97110cb3815731!8m2!3d-15.4455263!4d-49.116242!16s%2Fg%2F11x_lvv3gx?g_ep=Eg1tbF8yMDI2MTExMF8wIJvbDyoASAJQAg%3D%3D";
 const mapsHref =
   "https://www.google.com/maps/place/Matos+Tec+Sistemas+de+Seguran%C3%A7a+e+Energia+Solar+em+Goian%C3%A9sia/data=!4m6!3m5!1s0x6cce93ab2bdffb0b:0x4b97110cb3815731!8m2!3d-15.4455263!4d-49.116242!16s%2Fg%2F11x_lvv3gx";
 
