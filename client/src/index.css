@@ -1893,6 +1893,13 @@ h1 em, h2 em, h3 em {
   .cover.cover--residential .cover-actions--cover .btn { font-size: 12px; }
 }
 
+/* No computador, mantém o acesso ao WhatsApp sem exibir o mascote flutuante. */
+@media (min-width: 641px) {
+  .wa-mascot {
+    display: none;
+  }
+}
+
 
 /* Acabamento final dos CTAs da capa: sóbrio, técnico e sem aparência de aplicativo. */
 .cover.cover--residential .cover-actions--cover .btn {
