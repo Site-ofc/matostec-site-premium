@@ -5,6 +5,7 @@ import { Route, Router, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import ServiceDetail from "./pages/ServiceDetail";
 import NotFound from "./pages/NotFound";
 import { BASE } from "./site/paths";
 
@@ -14,6 +15,9 @@ const titles: Record<string, string> = {
   "/modelo-1": "Matos Tec — Segurança eletrônica",
   "/modelo-2": "Matos Tec — Energia solar",
   "/modelo-3": "Matos Tec — Elétrica e automação",
+  "/seguranca": "Matos Tec — Segurança eletrônica",
+  "/energia-solar": "Matos Tec — Energia solar",
+  "/eletrica-automacao": "Matos Tec — Elétrica e automação",
 };
 
 function TitleSync() {
@@ -41,6 +45,15 @@ function Routes() {
       </Route>
       <Route path="/modelo-3">
         <Home modelOverride={3} />
+      </Route>
+      <Route path="/seguranca">
+        <ServiceDetail serviceKey="seguranca" />
+      </Route>
+      <Route path="/energia-solar">
+        <ServiceDetail serviceKey="energia-solar" />
+      </Route>
+      <Route path="/eletrica-automacao">
+        <ServiceDetail serviceKey="eletrica-automacao" />
       </Route>
       <Route>
         <NotFound />

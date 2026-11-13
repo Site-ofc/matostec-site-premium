@@ -79,6 +79,7 @@ const problems = [
 const services = [
   {
     eyebrow: "01 · Segurança eletrônica",
+    page: "/seguranca",
     title: "Veja. Barre. Avise.",
     text: "Câmeras com acesso pelo celular, alarme, cerca elétrica e controle de acesso. A combinação depende dos pontos vulneráveis e da rotina de quem circula pelo local.",
     cta: "Falar sobre segurança",
@@ -90,6 +91,7 @@ const services = [
   },
   {
     eyebrow: "02 · Energia solar",
+    page: "/energia-solar",
     title: "Gere no próprio telhado.",
     text: "Projeto, instalação e homologação com a Equatorial Goiás. O dimensionamento considera a geração mensal estimada, o consumo e as condições do imóvel — não apenas a quantidade de placas.",
     cta: "Falar sobre energia solar",
@@ -101,6 +103,7 @@ const services = [
   },
   {
     eyebrow: "03 · Elétrica e automação",
+    page: "/eletrica-automacao",
     title: "Uma casa que responde.",
     text: "Revisão do quadro, aterramento e proteção contra surtos antes de automatizar luzes, portão e tomadas pelo celular ou por comando de voz.",
     cta: "Falar sobre elétrica e automação",
@@ -281,15 +284,15 @@ function Solutions() {
         <div className="solutions-grid">
           {services.map((service) => (
             <article className="solution" key={service.title}>
-              <a className="solution-media" href={serviceWhatsappHref(service.chatTopic)} target="_blank" rel="noreferrer" aria-label={service.cta}>
+              <a className="solution-media" href={link(service.page)} aria-label={`Ver detalhes de ${service.chatTopic}`}>
                 <StudioPhoto name={service.image} alt={service.alt} />
               </a>
               <div className="solution-body">
                 <span className="solution-index">{service.eyebrow}</span>
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
-                <a className="link-arrow" href={serviceWhatsappHref(service.chatTopic)} target="_blank" rel="noreferrer">
-                  {service.cta} <ArrowRight size={15} />
+                <a className="link-arrow" href={link(service.page)}>
+                  Ver detalhes <ArrowRight size={15} />
                 </a>
               </div>
             </article>
@@ -647,9 +650,9 @@ function Footer() {
           <div className="footer-links">
             <div className="footer-col">
               <span>Soluções</span>
-              <a href="#solucoes">Segurança eletrônica</a>
-              <a href="#solucoes">Energia solar</a>
-              <a href="#solucoes">Elétrica e automação</a>
+              <a href={link("/seguranca")}>Segurança eletrônica</a>
+              <a href={link("/energia-solar")}>Energia solar</a>
+              <a href={link("/eletrica-automacao")}>Elétrica e automação</a>
               <a href={link("/propostas")}>Conhecer nossas soluções</a>
             </div>
             <div className="footer-col">
@@ -708,9 +711,9 @@ function FullSite({ model }: { model: ModelId }) {
 
 function Gallery() {
   const cards = [
-    { id: 1 as ModelId, image: "security", title: "Segurança eletrônica", text: "Câmeras, alarmes, cercas elétricas e controle de acesso para proteger o que importa." },
-    { id: 2 as ModelId, image: "solar", title: "Energia solar", text: "Projeto, instalação e homologação para gerar sua própria energia com planejamento." },
-    { id: 3 as ModelId, image: "automation-service", title: "Elétrica e automação", text: "Quadro, aterramento, proteção e comandos inteligentes para uma rotina mais prática." },
+    { path: "/seguranca", image: "security", title: "Segurança eletrônica", text: "Câmeras, alarmes, cercas elétricas e controle de acesso para proteger o que importa." },
+    { path: "/energia-solar", image: "solar", title: "Energia solar", text: "Projeto, instalação e homologação para gerar sua própria energia com planejamento." },
+    { path: "/eletrica-automacao", image: "automation-service", title: "Elétrica e automação", text: "Quadro, aterramento, proteção e comandos inteligentes para uma rotina mais prática." },
   ];
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -730,11 +733,11 @@ function Gallery() {
         <div className="gallery-proof"><strong>5,0</strong> no Google · 6 avaliações</div>
       </section>
       <section className="gallery-grid">
-        {cards.map((card) => (
-          <a className="gallery-card" key={card.id} href={link(`/modelo-${card.id}`)}>
+        {cards.map((card, index) => (
+          <a className="gallery-card" key={card.path} href={link(card.path)}>
             <StudioPhoto name={card.image} alt={card.title} sizes="(max-width: 900px) 100vw, 30vw" />
             <div className="gallery-card-body">
-              <span>Solução 0{card.id}</span>
+              <span>Solução 0{index + 1}</span>
               <h2>{card.title}</h2>
               <p>{card.text}</p>
             </div>
