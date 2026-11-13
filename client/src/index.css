@@ -33,3 +33,50 @@
 .model-1 .site-footer .footer-bottom a{color:#b84546}
 :focus-visible{outline:3px solid #f0df67;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Layout fixes: separa a capa do menu e mantém o logo legível */
+@media (min-width: 901px) {
+  .hero,
+  .hero-inner {
+    min-height: 840px;
+  }
+  .hero-inner {
+    align-items: flex-start;
+    padding-top: 138px;
+  }
+  .hero-content {
+    padding-top: 0;
+  }
+  .top-nav {
+    top: 34px;
+  }
+  .brand-logo-image {
+    width: 146px;
+    height: 48px;
+  }
+}
+@media (max-width: 900px) {
+  .hero,
+  .hero-inner {
+    min-height: 740px;
+  }
+  .hero-content {
+    padding-top: 104px;
+  }
+  .top-nav {
+    top: 22px;
+  }
+  .brand-logo-image {
+    width: 118px;
+    height: 40px;
+  }
+}
+@media (max-width: 520px) {
+  .hero,
+  .hero-inner {
+    min-height: 720px;
+  }
+  .hero-content {
+    padding-top: 96px;
+  }
+}

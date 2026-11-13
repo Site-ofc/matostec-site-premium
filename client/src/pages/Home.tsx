@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
+import { asset, link } from "@/site/paths";
 import {
   Activity,
   ArrowDownRight,
@@ -128,7 +129,7 @@ const serviceCards = [
     title: "Veja. Barre. Avise.",
     text: "Câmeras no celular, alarme, cerca elétrica e controle de acesso. A proteção que funciona combina duas ou três camadas depois de olhar o muro, o portão e o movimento.",
     icon: ShieldCheck,
-    image: "/assets/google/matostec-painel.jpg",
+    image: asset("/assets/google/matostec-painel.webp"),
     accent: "cyan",
   },
   {
@@ -136,7 +137,7 @@ const serviceCards = [
     title: "Gere no próprio telhado.",
     text: "Projeto, instalação e homologação com a Equatorial Goiás. O sistema é dimensionado pela geração estimada em kWh por mês, não apenas pela quantidade de placas.",
     icon: SunMedium,
-    image: "/assets/google/matostec-rooftop.jpg",
+    image: asset("/assets/google/matostec-rooftop.webp"),
     accent: "amber",
   },
   {
@@ -144,7 +145,7 @@ const serviceCards = [
     title: "Uma casa que responde.",
     text: "Quadro, aterramento, proteção contra surto, luz, portão, tomadas, persianas e cenas no celular ou na voz — com a elétrica feita do jeito certo.",
     icon: House,
-    image: "/assets/google/matostec-painel.jpg",
+    image: asset("/assets/google/matostec-painel.webp"),
     accent: "mint",
   },
 ] as const;
@@ -180,8 +181,8 @@ function getModelFromPath(): ModelId | null {
 
 function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
-    <a className={`brand-mark ${inverse ? "inverse" : ""}`} href="/" aria-label="Matos Tec, início">
-      <img className="brand-logo-image" src="/assets/matos-tec-logo-google.png" alt="Matos Tec" />
+    <a className={`brand-mark ${inverse ? "inverse" : ""}`} href={link("/")} aria-label="Matos Tec, início">
+      <img className="brand-logo-image" src={asset("/assets/matos-tec-logo-google.png")} width={252} height={77} alt="Matos Tec — Segurança Eletrônica" />
     </a>
   );
 }
@@ -211,7 +212,7 @@ function ModelPicker({ active }: { active?: ModelId }) {
     <div className="model-picker" aria-label="Escolher modelo">
       <span className="picker-label">3 propostas</span>
       {[1, 2, 3].map((id) => (
-        <a key={id} className={active === id ? "active" : ""} href={`/modelo-${id}`}>
+        <a key={id} className={active === id ? "active" : ""} href={link(`/modelo-${id}`)}>
           <span className={`picker-dot dot-${id}`} /> {modelLabels[id as ModelId]}
         </a>
       ))}
@@ -225,7 +226,7 @@ function Gallery() {
       id: 1 as ModelId,
       number: "01",
       theme: "night-card",
-      image: "/assets/google/matostec-rooftop.jpg",
+      image: asset("/assets/google/matostec-rooftop.webp"),
       title: "Nightline",
       subtitle: modelDescriptions[1],
       detail: "Uma presença escura, cinematográfica e premium para destacar confiança e tecnologia.",
@@ -234,7 +235,7 @@ function Gallery() {
       id: 2 as ModelId,
       number: "02",
       theme: "solar-card",
-      image: "/assets/google/matostec-rooftop.jpg",
+      image: asset("/assets/google/matostec-rooftop.webp"),
       title: "Solar Aura",
       subtitle: modelDescriptions[2],
       detail: "Uma direção luminosa e acolhedora para aproximar famílias, comércio e fazendas.",
@@ -243,7 +244,7 @@ function Gallery() {
       id: 3 as ModelId,
       number: "03",
       theme: "grid-card",
-      image: "/assets/google/matostec-painel.jpg",
+      image: asset("/assets/google/matostec-painel.webp"),
       title: "Grid Control",
       subtitle: modelDescriptions[3],
       detail: "Uma interface modular para levar o visitante do problema ao próximo passo.",
@@ -267,7 +268,7 @@ function Gallery() {
       </section>
       <section className="model-grid">
         {cards.map((card) => (
-          <a className={`model-card ${card.theme}`} key={card.id} href={`/modelo-${card.id}`}>
+          <a className={`model-card ${card.theme}`} key={card.id} href={link(`/modelo-${card.id}`)}>
             <div className="model-card-image" style={{ backgroundImage: `linear-gradient(180deg, transparent 30%, rgba(0,0,0,.76)), url(${card.image})` }}>
               <span className="model-number">{card.number}</span>
               <span className="model-card-arrow"><ArrowUpRight size={20} /></span>
@@ -310,19 +311,19 @@ function Hero({ model }: { model: ModelId }) {
       eyebrow: "Tecnologia que protege o que importa",
       title: <>Uma casa mais <em>segura.</em><br />Um sistema que faz sentido.</>,
       text: "Câmeras, energia do sol e uma casa que responde a um toque. A mesma empresa cuida de tudo, do projeto à manutenção.",
-      image: "/assets/google/matostec-rooftop.jpg",
+      image: asset("/assets/google/matostec-rooftop.webp"),
     },
     2: {
       eyebrow: "Energia, segurança e automação no mesmo plano",
       title: <>Tudo começa quando<br /><em>você decide cuidar.</em></>,
       text: "Soluções pensadas para a rotina real de casas, comércios, condomínios e fazendas em Goianésia, Anápolis e no Vale do São Patrício.",
-      image: "/assets/google/matostec-rooftop.jpg",
+      image: asset("/assets/google/matostec-rooftop.webp"),
     },
     3: {
       eyebrow: "Matos Tec / sistema integrado",
       title: <>Seu imóvel não é<br /><span className="hero-mono">três problemas.</span></>,
       text: "É um único sistema. Comece pelo que está acontecendo hoje e deixe o próximo passo claro: elétrica, solar, segurança ou automação.",
-      image: "/assets/google/matostec-painel.jpg",
+      image: asset("/assets/google/matostec-painel.webp"),
     },
   };
   const item = content[model];
@@ -379,7 +380,7 @@ function IntegrationSection({ model }: { model: ModelId }) {
   ];
   return (
     <section className={`integration-section model-${model}`}>
-      <div className="container-wide integration-grid"><div className="integration-image"><img src="/assets/google/matostec-painel.jpg" alt="Técnico chegando para atendimento em uma casa" /><span className="image-stamp"><span>1</span> visita olha o imóvel inteiro</span></div><div className="integration-copy"><SectionHeading eyebrow="Uma empresa em vez de três" title={<>Menos retrabalho.<br /><em>Mais visão do todo.</em></>} text="Quem instala a câmera é a mesma empresa que faz a parte elétrica e coloca o sistema solar. Veja o que muda na prática." /><div className="benefit-list">{benefits.map((benefit, index) => <div key={benefit}><span>0{index + 1}</span><p>{benefit}</p></div>)}</div><a className="text-link" href={whatsappHref} target="_blank" rel="noreferrer">Quero mais de uma área na mesma visita <ArrowRight size={16} /></a></div></div>
+      <div className="container-wide integration-grid"><div className="integration-image"><img src={asset("/assets/google/matostec-painel-800.webp")} srcSet={`${asset("/assets/google/matostec-painel-800.webp")} 800w, ${asset("/assets/google/matostec-painel.webp")} 1200w`} sizes="(max-width: 900px) 100vw, 560px" width={1200} height={1600} loading="lazy" decoding="async" alt="Quadro elétrico organizado com disjuntores, DR e DPS" /><span className="image-stamp"><span>1</span> visita olha o imóvel inteiro</span></div><div className="integration-copy"><SectionHeading eyebrow="Uma empresa em vez de três" title={<>Menos retrabalho.<br /><em>Mais visão do todo.</em></>} text="Quem instala a câmera é a mesma empresa que faz a parte elétrica e coloca o sistema solar. Veja o que muda na prática." /><div className="benefit-list">{benefits.map((benefit, index) => <div key={benefit}><span>0{index + 1}</span><p>{benefit}</p></div>)}</div><a className="text-link" href={whatsappHref} target="_blank" rel="noreferrer">Quero mais de uma área na mesma visita <ArrowRight size={16} /></a></div></div>
     </section>
   );
 }
@@ -417,13 +418,13 @@ function ProcessSection() {
 
 function AfterSection() {
   return (
-    <section className="after-section"><div className="container-wide after-grid"><div className="after-image"><img src="/assets/google/matostec-painel.jpg" alt="Limpeza da lente de uma câmera de segurança" /><span>O sistema continua sendo seu depois da entrega.</span></div><div><SectionHeading eyebrow="Depois que o técnico vai embora" title="Cuidado simples. Sistema presente." text="A entrega inclui explicação de uso. A rotina mantém o investimento funcionando melhor." /><div className="after-cards"><article><ShieldCheck size={18} /><h3>Segurança</h3><p>Limpar a lente, conferir uma gravação antiga e trocar acessos quando necessário. Baterias têm vida útil.</p></article><article><SunMedium size={18} /><h3>Energia solar</h3><p>Acompanhar o app e limpar os painéis quando a poeira acumular, especialmente na seca de maio a setembro.</p></article><article><PlugZap size={18} /><h3>Elétrica + automação</h3><p>Testar o DR de tempos em tempos e manter aplicativo e central atualizados.</p></article></div><a className="text-link" href={whatsappHref} target="_blank" rel="noreferrer">Já tenho um sistema e preciso de manutenção <ArrowRight size={16} /></a></div></div></section>
+    <section className="after-section"><div className="container-wide after-grid"><div className="after-image"><img src={asset("/assets/google/matostec-painel-800.webp")} srcSet={`${asset("/assets/google/matostec-painel-800.webp")} 800w, ${asset("/assets/google/matostec-painel.webp")} 1200w`} sizes="(max-width: 900px) 100vw, 520px" width={1200} height={1600} loading="lazy" decoding="async" alt="Quadro elétrico com disjuntores e fiação organizada" /><span>O sistema continua sendo seu depois da entrega.</span></div><div><SectionHeading eyebrow="Depois que o técnico vai embora" title="Cuidado simples. Sistema presente." text="A entrega inclui explicação de uso. A rotina mantém o investimento funcionando melhor." /><div className="after-cards"><article><ShieldCheck size={18} /><h3>Segurança</h3><p>Limpar a lente, conferir uma gravação antiga e trocar acessos quando necessário. Baterias têm vida útil.</p></article><article><SunMedium size={18} /><h3>Energia solar</h3><p>Acompanhar o app e limpar os painéis quando a poeira acumular, especialmente na seca de maio a setembro.</p></article><article><PlugZap size={18} /><h3>Elétrica + automação</h3><p>Testar o DR de tempos em tempos e manter aplicativo e central atualizados.</p></article></div><a className="text-link" href={whatsappHref} target="_blank" rel="noreferrer">Já tenho um sistema e preciso de manutenção <ArrowRight size={16} /></a></div></div></section>
   );
 }
 
 function RegionSection() {
   return (
-    <section className="region-section" id="regiao"><div className="region-image" style={{ backgroundImage: "linear-gradient(90deg, rgba(28,32,56,.95), rgba(28,32,56,.52)), url(/assets/google/matostec-rooftop.jpg)" }} /><div className="container-wide region-content"><div><span className="eyebrow">Localização e atendimento</span><h2>Goianésia, Anápolis<br />e o Vale do São Patrício.</h2><p>Atendimento para casas, comércios, condomínios e fazendas, com uma equipe que entende o imóvel inteiro.</p><div className="region-actions"><a className="button button-whatsapp" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Ver se atendemos você <ArrowUpRight size={15} /></a><a className="button button-map" href={mapsHref} target="_blank" rel="noreferrer"><MapPin size={16} /> Abrir localização no Google</a></div></div><div className="region-list"><div className="rating"><strong>5,0</strong><span><Star size={15} fill="currentColor" /> no Google<br /><small>6 avaliações</small></span></div><div className="region-chips">{regions.map((region) => <span key={region}><MapPin size={12} /> {region}</span>)}</div><div className="region-links"><a className="review-link" href={reviewsHref} target="_blank" rel="noreferrer"><Star size={14} fill="currentColor" /> Ver avaliações no Google <ArrowUpRight size={14} /></a><a className="review-link" href={mapsHref} target="_blank" rel="noreferrer"><MapPin size={14} /> Ver perfil e fotos <ArrowUpRight size={14} /></a></div></div></div></section>
+    <section className="region-section" id="regiao"><div className="region-image" style={{ backgroundImage: `linear-gradient(90deg, rgba(28,32,56,.95), rgba(28,32,56,.52)), url(${asset("/assets/google/matostec-rooftop.webp")})` }} /><div className="container-wide region-content"><div><span className="eyebrow">Localização e atendimento</span><h2>Goianésia, Anápolis<br />e o Vale do São Patrício.</h2><p>Atendimento para casas, comércios, condomínios e fazendas, com uma equipe que entende o imóvel inteiro.</p><div className="region-actions"><a className="button button-whatsapp" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Ver se atendemos você <ArrowUpRight size={15} /></a><a className="button button-map" href={mapsHref} target="_blank" rel="noreferrer"><MapPin size={16} /> Abrir localização no Google</a></div></div><div className="region-list"><div className="rating"><strong>5,0</strong><span><Star size={15} fill="currentColor" /> no Google<br /><small>6 avaliações</small></span></div><div className="region-chips">{regions.map((region) => <span key={region}><MapPin size={12} /> {region}</span>)}</div><div className="region-links"><a className="review-link" href={reviewsHref} target="_blank" rel="noreferrer"><Star size={14} fill="currentColor" /> Ver avaliações no Google <ArrowUpRight size={14} /></a><a className="review-link" href={mapsHref} target="_blank" rel="noreferrer"><MapPin size={14} /> Ver perfil e fotos <ArrowUpRight size={14} /></a></div></div></div></section>
   );
 }
 
@@ -435,12 +436,11 @@ function FAQSection() {
 }
 
 function SiteFooter({ model }: { model: ModelId }) {
-  return <footer className={`site-footer footer-${model}`}><div className="container-wide footer-top"><div><BrandMark inverse={model === 1} /><p>Segurança eletrônica, energia solar e automação em Goianésia, Anápolis e no Vale do São Patrício.</p></div><div className="footer-links"><div><span className="footer-label">Soluções</span><a href="#solucoes">Segurança eletrônica</a><a href="#solucoes">Energia solar</a><a href="#solucoes">Elétrica e automação</a></div><div><span className="footer-label">Contato</span><a href={whatsappHref} target="_blank" rel="noreferrer">Chamar no WhatsApp</a><a href={phoneHref}>Ligar {phone}</a><a href={reviewsHref} target="_blank" rel="noreferrer">Avaliações no Google</a></div></div></div><div className="container-wide footer-bottom"><span>© Matos Tec · projeto, instalação e manutenção.</span><a href="#topo">Voltar ao topo</a></div></footer>;
+  return <footer className={`site-footer footer-${model}`}><div className="container-wide footer-top"><div><BrandMark inverse={model === 1} /><p>Segurança eletrônica, energia solar e automação em Goianésia, Anápolis e no Vale do São Patrício.</p></div><div className="footer-links"><div><span className="footer-label">Soluções</span><a href="#solucoes">Segurança eletrônica</a><a href="#solucoes">Energia solar</a><a href="#solucoes">Elétrica e automação</a></div><div><span className="footer-label">Contato</span><a href={whatsappHref} target="_blank" rel="noreferrer">Chamar no WhatsApp</a><a href={phoneHref}>Ligar {phone}</a><a href={reviewsHref} target="_blank" rel="noreferrer">Avaliações no Google</a><a href={link("/propostas")}>Ver as 3 propostas</a></div></div></div><div className="container-wide footer-bottom"><span>© Matos Tec · projeto, instalação e manutenção.</span><a href="#topo">Voltar ao topo</a></div></footer>;
 }
 
 function FullSite({ model }: { model: ModelId }) {
   useEffect(() => {
-    document.title = `Matos Tec — ${modelLabels[model]}`;
     window.scrollTo(0, 0);
   }, [model]);
   return <div className={`site-shell model-${model}`}><TopNav model={model} variant={model === 2 ? "nav-light" : model === 3 ? "nav-grid" : ""} /><Hero model={model} /><ServiceStrip /><ProblemSection model={model} /><IntegrationSection model={model} /><SequenceSection /><ServiceDetails model={model} /><ProcessSection /><AfterSection /><RegionSection /><FAQSection /><section className="final-cta"><div className="container-wide"><span className="eyebrow">Qual área vem primeiro?</span><h2>Vamos deixar seu próximo passo claro.</h2><div><p>Conte pelo WhatsApp o que precisa resolver. A visita técnica organiza o resto.</p><WhatsAppButton>Começar pelo WhatsApp</WhatsAppButton></div></div></section><SiteFooter model={model} /></div>;

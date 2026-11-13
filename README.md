@@ -1,5 +1,9 @@
 # Matos Tec — Site premium
 
+**Site publicado:** https://juliaassis238.github.io/matostec-site-premium/
+
+O deploy é automático: cada push na `main` roda o workflow `.github/workflows/deploy-pages.yml`, gera o build estático em `dist/public` e publica no GitHub Pages (base `/matostec-site-premium/`).
+
 Homepage institucional premium para a Matos Tec, com identidade baseada no logotipo usado no perfil do Google Maps, fotos reais do perfil e paleta azul-marinho, vermelho, amarelo e branco.
 
 ## Conteúdo incluído
@@ -19,6 +23,11 @@ pnpm dev:static
 ```
 
 O site abre em `http://localhost:3000`.
+
+## Rotas
+- `/` — site premium (direção Nightline).
+- `/modelo-1`, `/modelo-2`, `/modelo-3` — as três propostas.
+- `/propostas` — galeria para comparar as propostas.
 
 ## Links oficiais
 

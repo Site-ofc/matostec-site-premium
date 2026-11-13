@@ -10,3 +10,7 @@
 - [x] Rotas declaradas em `manus-routes.json`.
 - [x] Capturas de tela completas em desktop e mobile para escolha do usuário.
 - [x] Diagnóstico TypeScript e build executados com sucesso.
+- [ ] Mascote e capa definitivos (próxima etapa, a pedido da cliente).
+- [x] Publicação automática no GitHub Pages com fallback de rotas (`404.html`).
+- [x] Caminhos com base `/matostec-site-premium/`, favicon e metatags Open Graph.
+- [x] Fotos reais convertidas para WebP com versões responsivas.
