@@ -1770,3 +1770,107 @@ h1 em, h2 em, h3 em {
   .cover.cover--residential .cover-actions--cover { gap: 6px; bottom: 24px; }
   .cover.cover--residential .cover-actions--cover .btn { font-size: 12px; }
 }
+
+
+/* Ajuste fino de enquadramento e assinatura visual da capa */
+.cover.cover--residential .cover-inner {
+  padding-top: clamp(88px, 9vh, 108px);
+}
+.cover.cover--residential .cover-brand .brand > img { width: 94px; }
+.cover.cover--residential .cover-brand .brand-type b { font-size: 46px; }
+.cover.cover--residential .cover-brand .brand-type i { font-size: 8.5px; }
+.cover.cover--residential .cover-body {
+  justify-content: center;
+  align-items: center;
+  padding: 26px 0 clamp(64px, 8vh, 82px);
+}
+.cover.cover--residential .cover-copy {
+  max-width: 840px;
+  transform: translateY(1.5vh);
+}
+.cover.cover--residential .cover-copy h1 {
+  max-width: 840px;
+  margin: 26px auto 18px;
+  font-size: clamp(60px, 7.6vw, 100px);
+  line-height: 0.99;
+}
+.cover.cover--residential .cover-copy > p {
+  max-width: 610px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.cover.cover--residential .cover-actions--cover {
+  width: min(760px, calc(100% - 56px));
+  bottom: clamp(38px, 7vh, 82px);
+  gap: 16px;
+}
+.cover.cover--residential .cover-actions--cover .btn {
+  min-height: 70px;
+  padding: 16px 22px;
+  border-radius: 14px;
+  font-size: 18px;
+  box-shadow: 0 14px 30px -17px rgba(0, 0, 0, 0.9), inset 0 1px rgba(255, 255, 255, 0.16);
+}
+.cover.cover--residential .cover-actions--cover .btn-primary {
+  background: linear-gradient(145deg, #bd1b32 0%, #991329 52%, #7f1024 100%);
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 12px 32px -15px rgba(191, 25, 49, 0.78), inset 0 1px rgba(255, 255, 255, 0.24);
+}
+.cover.cover--residential .cover-actions--cover .btn-outline {
+  background: linear-gradient(145deg, rgba(18, 27, 49, 0.92), rgba(8, 13, 29, 0.86));
+  border-color: rgba(232, 238, 249, 0.58);
+  color: #f4f6fa;
+}
+.cover.cover--residential .cover-actions--cover .btn svg {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .cover.cover--residential .cover-brand .brand > img { width: 86px; }
+  .cover.cover--residential .cover-brand .brand-type b { font-size: 40px; }
+  .cover.cover--residential .cover-body { padding: 28px 0 92px; }
+  .cover.cover--residential .cover-copy h1 { font-size: clamp(50px, 8.2vw, 74px); }
+  .cover.cover--residential .cover-actions--cover { width: min(760px, calc(100% - 40px)); }
+}
+
+@media (max-width: 640px) {
+  .cover.cover--residential .cover-inner { padding-top: 82px; }
+  .cover.cover--residential .cover-brand .brand > img { width: 66px; }
+  .cover.cover--residential .cover-brand .brand-type b { font-size: 34px; }
+  .cover.cover--residential .cover-brand .brand-type i { font-size: 7px; }
+  .cover.cover--residential .cover-body { padding: 26px 0 96px; }
+  .cover.cover--residential .cover-copy { transform: translateY(0); }
+  .cover.cover--residential .cover-copy h1 {
+    max-width: 350px;
+    margin: 22px auto 15px;
+    font-size: clamp(42px, 10.6vw, 52px);
+  }
+  .cover.cover--residential .cover-copy > p {
+    max-width: 310px;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .cover.cover--residential .cover-actions--cover {
+    width: calc(100% - 32px);
+    bottom: 28px;
+    gap: 8px;
+  }
+  .cover.cover--residential .cover-actions--cover .btn {
+    min-height: 60px;
+    padding: 12px 8px;
+    border-radius: 11px;
+    gap: 5px;
+    font-size: 13px;
+  }
+  .cover.cover--residential .cover-actions--cover .btn svg { width: 20px; height: 20px; padding: 3px; }
+}
+
+@media (max-width: 360px) {
+  .cover.cover--residential .cover-actions--cover { width: calc(100% - 24px); gap: 6px; bottom: 24px; }
+  .cover.cover--residential .cover-actions--cover .btn { font-size: 12px; }
+}
